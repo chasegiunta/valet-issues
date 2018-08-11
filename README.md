@@ -1,3 +1,16 @@
+# Installation
+
+For the most part, follow: 
+https://medium.com/@jalendport/running-craft-cms-3-on-laravel-valet-6df61e5193fd
+
+Couple notes:
+ - If the incorrect PHP version (`usr/bin/php` - default Mac php) is showing when running `which php`, restart terminal. If it's _still_ not showing the correct (`usr/local/bin/php`), run `brew link --force php@7.1` (or whichever php version you've installed)
+ 
+- Running `pecl` should also be recognized (this is used for installing php extensions)
+ 
+- If valet isn't found when running `valet install`, restart your terminal. If it's _still_ not found, replace the composer executable line with `export PATH="$PATH:$HOME/.composer/vendor/bin"` in your .bashrc, or .zshrc file (`~` parsing problems, it seems. `$HOME` ftw).
+
+
 # valet-issues
 
 #### Can't read dir of '/usr/local/etc/my.cnf.d' (Errcode: 2 "No such file or directory")
