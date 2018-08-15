@@ -7,6 +7,14 @@ Couple notes:
  - If the incorrect PHP version (`usr/bin/php` - default Mac php) is showing when running `which php`, restart terminal. If it's _still_ not showing the correct (`usr/local/bin/php`), run `brew link --force php@7.1` (or whichever php version you've installed)
  
 - Running `pecl` should also be recognized (this is used for installing php extensions)
+
+- For imagemagick (imagick) to be installed & recognized:
+```
+brew install autoconf pkg-config imagemagick
+mkdir /usr/local/lib/php/pecl  # If this dir doesn't exist it will cause pecl install to fail
+pecl install imagick
+brew services restart php@7.1  # Or valet restart
+```
  
 - If valet isn't found when running `valet install`, restart your terminal. If it's _still_ not found, replace the composer executable line with `export PATH="$PATH:$HOME/.composer/vendor/bin"` in your .bashrc, or .zshrc file (`~` parsing problems, it seems. `$HOME` ftw).
 
