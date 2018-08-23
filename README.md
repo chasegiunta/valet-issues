@@ -18,6 +18,18 @@ brew services restart php@7.1  # Or valet restart
  
 - If valet isn't found when running `valet install`, restart your terminal. If it's _still_ not found, replace the composer executable line with `export PATH="$PATH:$HOME/.composer/vendor/bin"` in your .bashrc, or .zshrc file (`~` parsing problems, it seems. `$HOME` ftw).
 
+# Initial Configuration
+
+Right away, you might want to dig into `/usr/local/etc/php/[versionNumber]/php.ini` and increase some limits like `memory_limit` to something above the default `128M`, and `max_input_vars` for those projects with extraordinary amounts of fields in matrix content builders.
+
+Settings to search for:
+
+- `memory_limit`
+- `upload_max_filesize`
+- `max_input_vars`
+- `max_execution_time`
+
+You'll want to `valet restart` after changing these settings.
 
 # valet-issues
 
