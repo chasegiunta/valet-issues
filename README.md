@@ -20,12 +20,12 @@ brew services restart php@7.1  # Or valet restart
 
 # Initial Configuration
 
-Right away, you might want to dig into `/usr/local/etc/php/[versionNumber]/php.ini` and increase some limits like `memory_limit` to something above the default `128M`, and `max_input_vars` for those projects with extraordinary amounts of fields in matrix content builders.
+Right away, you might want to dig into `/usr/local/etc/php/[versionNumber]/conf.d/php-memory-limits.ini` and increase some limits like `memory_limit` to something above the default `128M`. It's unclear why memory limits is managed in a separate file, but for other settings like `max_input_vars` for those projects with extraordinary amounts of fields in matrix content builders, look in `/usr/local/etc/php/[versionNumber]/php.ini`
 
 Settings to search for:
 
-- `memory_limit`
-- `upload_max_filesize`
+- `memory_limit` ( exists in `conf.d/php-memory-limits.ini` & `php.ini` )
+- `upload_max_filesize` ( exists in `conf.d/php-memory-limits.ini` & `php.ini` )
 - `max_input_vars`
 - `max_execution_time`
 
