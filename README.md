@@ -29,7 +29,7 @@ Settings to search for:
 - `max_input_vars`
 - `max_execution_time`
 
-You'll want to `valet restart` after changing these settings.
+You'll want to `brew services restart php@7.1` (or whatever version) after changing these settings.
 
 # valet-issues
 
