@@ -55,3 +55,15 @@ then, adding mysql to services will fix your problem. With this method, mysql wi
 
 After that, you can restart your system and try connecting to mariadb.
 (https://stackoverflow.com/a/34709790/4565664)
+
+#### 504 Gateway Time-out
+
+In /usr/local/etc/nginx/nginx.conf, add these lines to the http object: 
+```
+client_header_timeout 3000;
+client_body_timeout 3000;
+fastcgi_read_timeout 3000;
+fastcgi_buffers 8 128k;
+fastcgi_buffer_size 128k;
+```
+https://github.com/laravel/valet/issues/315
