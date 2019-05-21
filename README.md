@@ -36,8 +36,9 @@ You'll want to `brew services restart php@7.1` (or whatever version) after chang
 #### Can't read dir of '/usr/local/etc/my.cnf.d' (Errcode: 2 "No such file or directory")
 
 `mkdir /usr/local/etc/my.cnf.d`
+This was removed from a `brew prune` or `brew cleanup`, either manually ran by you or by brew during an update or upgrade. To prevent this folder from being remove, place an empty file in it.
 
-(https://github.com/Homebrew/legacy-homebrew/issues/31760)
+(https://github.com/Homebrew/legacy-homebrew/issues/31760 & https://github.com/Homebrew/brew/issues/2792)
 
 
 #### ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
