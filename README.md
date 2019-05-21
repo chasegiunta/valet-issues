@@ -9,6 +9,8 @@ Couple notes:
 - Running `pecl` should also be recognized (this is used for installing php extensions)
 
 - For imagemagick (imagick) to be installed & recognized:
+(If you just ran updates, first try `valet install`. If that fails, proceed)
+
 ```
 brew install autoconf pkg-config imagemagick
 mkdir /usr/local/lib/php/pecl  # If this dir doesn't exist it will cause pecl install to fail
@@ -35,7 +37,8 @@ You'll want to `brew services restart php@7.1` (or whatever version) after chang
 
 #### Can't read dir of '/usr/local/etc/my.cnf.d' (Errcode: 2 "No such file or directory")
 
-`mkdir /usr/local/etc/my.cnf.d`
+Fix: `mkdir /usr/local/etc/my.cnf.d` & run `valet install`.
+
 This was removed from a `brew prune` or `brew cleanup`, either manually ran by you or by brew during an update or upgrade. To prevent this folder from being remove, place an empty file in it.
 
 (https://github.com/Homebrew/legacy-homebrew/issues/31760 & https://github.com/Homebrew/brew/issues/2792)
